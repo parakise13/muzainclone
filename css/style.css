@@ -1,0 +1,332 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script|Noto+Sans+KR&display=swap");
+
+/* layout */
+body {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.en {
+    font-family: "handel gothic", sans-serif;
+}
+
+.en_s {
+    font-family: "Dancing Script", cursive;
+}
+
+.wrap {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+}
+
+header .innerheader {
+    max-width: 1720px;
+    height: 110px;
+    line-height: 110px;
+    margin: 0 auto;
+}
+
+header .innerheader .logo {
+    float: left;
+}
+
+header .innerheader .logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+header .innerheader .mainMenu {
+    float: right;
+    position: relative;
+}
+
+header .innerheader .mainMenu span.bar {
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+}
+
+header .innerheader .mainMenu .gnb {
+    float: left;
+}
+
+header .innerheader .mainMenu .gnb li {
+    float: left;
+    margin: 0 20px;
+}
+
+header .innerheader .mainMenu .gnb li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #555;
+}
+
+header .innerheader .mainMenu .sns {
+    float: left;
+    margin-left: 300px;
+}
+
+header .innerheader .mainMenu .sns li {
+    float: left;
+}
+
+header .innerheader .mainMenu .sns li a {
+    padding: 0 10px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #555;
+}
+
+/* visual */
+
+section.visual {
+    max-width: 1720px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+section.visual .mainimg {
+    float: left;
+    width: 50%;
+}
+
+section.visual .mainimg img {
+    width: 90%;
+}
+
+section.visual .mainTxt {
+    float: left;
+    width: 50%;
+    margin-top: 180px;
+}
+
+section.visual .mainTxt .tit {
+    font-size: 72px;
+}
+
+section.visual .mainTxt .tit span.en_s {
+    margin-bottom: 10px;
+}
+
+section.visual .mainTxt .txt {
+    padding: 50px 0 0 70px;
+}
+
+/* 공통요소 */
+.tit {
+    font-size: 50px;
+    line-height: 1.2;
+    font-weight: normal;
+}
+
+.tit span {
+    display: block;
+}
+
+.tit span b {
+    font-weight: normal;
+}
+
+.tit span.en_s {
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.tit span.gray {
+    color: #ccc;
+}
+
+.tit p {
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.tit p b {
+    font-weight: normal;
+}
+
+.moreBtn {
+    display: inline-block;
+    color: #333;
+    position: relative;
+    padding-left: 45px;
+    margin-top: 20px;
+    transform: skewX(-15deg) translateX(5px);
+    transition: 0.15s;
+}
+
+.moreBtn::before {
+    content: "";
+    width: 42px;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    left: 0;
+    top: 54%;
+}
+
+.moreBtn:hover,
+.moreBtn:focus {
+    transform: skewX(0deg) translateX(0px);
+    transition: 0.3s;
+}
+
+/* menuOpen */
+.menuOpen button.open {
+    background: none;
+    border: none;
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 30px 22px;
+    box-sizing: border-box;
+}
+
+.menuOpen button.open::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    position: absolute;
+    right: -100px;
+    top: 0;
+    z-index: -1;
+    transition: all 0.5s;
+}
+
+.menuOpen button.open:hover::before,
+.menuOpen button.open:focus::before {
+    right: 0;
+    cursor: pointer;
+}
+
+/* menuWrap 기본 layout*/
+.menuOpen .menuWrap {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #eee;
+}
+
+.menuOpen .menuWrap .tit {
+    color: #ccc;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    font-size: 60px;
+}
+
+.menuOpen .menuWrap .tit li a {
+    margin-bottom: 20px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.menuOpen .menuWrap .tit li a:hover,
+.menuOpen .menuWrap .tit li a:focus {
+    transform: translateX(30px);
+    color: #333;
+    transition: all 0.3s;
+}
+
+.menuOpen .menuWrap .tit li a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: all 0.3s;
+}
+
+.menuOpen .menuWrap .tit li a:hover::after,
+.menuOpen .menuWrap .tit li a:focus::after {
+    width: 100%;
+}
+
+.menuOpen .menuWrap .close.en {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    font-size: 25px;
+    border-bottom: 1px solid #888;
+    color: #888;
+}
+
+.menuOpen .menuWrap .close:first-child {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+}
+
+/* menuWrap 평소상태와 menuOpen 버튼 클릭했을 때 상태 */
+.menuOpen .menuWrap {
+    width: 0;
+    transition: 0s;
+    overflow: hidden;
+    transform: skewY(40deg);
+    opacity: 0;
+}
+
+.menuOpen .menuWrap.on {
+    width: 100%;
+    right: 0;
+    transform: skewY(0deg);
+    transition: 0.5s;
+    opacity: 1;
+} /* menuOpen 버튼을 클릭했을 때 */
+
+.menuOpen .menuWrap ul {
+    display: none;
+}
+
+.menuOpen .menuWrap.on ul {
+    display: block;
+}
+
+/* 메뉴열었을떄 동그라미 */
+.menuOpen .menuWrap.on::before {
+    content: "";
+    width: 700px;
+    height: 700px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%);
+}
+
+.menuOpen .menuWrap.on::before {
+    animation-name: menuWrap2;
+    animation-duration: 1.8s;
+}
+
+@keyframes menuWrap2 {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.5);
+    }
+}
